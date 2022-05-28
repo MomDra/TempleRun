@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GroundManager : MonoBehaviour
 {
@@ -106,6 +107,11 @@ public class GroundManager : MonoBehaviour
         float x = Random.Range(-7.5f, 7.5f);
         Vector3 tmp = lastSpawnedGround.transform.forward.normalized * z + lastSpawnedGround.transform.right.normalized * x + Vector3.up;
         Instantiate(StraightItem, lastSpawnedGround.transform.position + tmp, Quaternion.identity, lastSpawnedGround.transform);
+    }
+
+    public void BakeNavMesh()
+    {
+        lastSpawnedGround.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     public void InCreaseStraightGround()

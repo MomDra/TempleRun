@@ -12,6 +12,7 @@ public class MakeCollider : MonoBehaviour
             GameManager.Instance.GroundManager.SpawnCoin();
             GameManager.Instance.GroundManager.SpawnFense();
             GameManager.Instance.GroundManager.SpawnStraightItem();
+            //GameManager.Instance.GroundManager.BakeNavMesh();
         }
     }
 }
