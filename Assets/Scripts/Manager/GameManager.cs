@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioClip gameEndClip;
 
+    GameObject player;
+    public GameObject Player { get => player; set => player = value; }
+
     private void Awake() {
         if (singleTon != null)
         {

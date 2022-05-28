@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         applySpeed = speed;
         applySideSpeed = sideSpeed;
 
+        GameManager.Instance.Player = gameObject;
         GameManager.Instance.SoundManager.PlayWalkSound();
     }
 
