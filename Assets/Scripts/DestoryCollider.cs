@@ -8,8 +8,7 @@ public class DestoryCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("?!");
-            Destroy(transform.parent.parent.gameObject, 6f);
+            Destroy(transform.parent.parent.gameObject, 10f);
         }
     }
 }

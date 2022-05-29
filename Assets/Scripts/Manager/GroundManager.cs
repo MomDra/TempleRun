@@ -32,8 +32,8 @@ public class GroundManager : MonoBehaviour
     public void SpawnGround()
     {
         int n = Random.Range(1, 11);
-
-        if(n <= leftBound)
+        
+        if (n <= leftBound)
         {
             SpawnLeft();
             Debug.Log("¿ÞÂÊÀÌ¿ä!");
@@ -52,23 +52,33 @@ public class GroundManager : MonoBehaviour
 
     void SpawnStraight()
     {
+        OffMeshLink link = lastSpawnedGround.GetComponentInChildren<OffMeshLink>();
         lastSpawnedGround = Instantiate(groundPrefab, lastSpawnedGround.transform.position + lastSpawnedGround.transform.forward * 60, lastSpawnedGround.transform.rotation);
+        link.endTransform = lastSpawnedGround.transform.Find("OffMeshLink").Find("start").transform;
     }
 
     void SpawnRight()
     {
+        OffMeshLink link = lastSpawnedGround.GetComponentInChildren<OffMeshLink>();
+
         Vector3 spawnPoint = lastSpawnedGround.transform.position;
         spawnPoint += lastSpawnedGround.transform.right * 22.5f;
         spawnPoint += lastSpawnedGround.transform.forward * 37.5f;
         lastSpawnedGround = Instantiate(groundPrefab, spawnPoint, lastSpawnedGround.transform.rotation * Quaternion.AngleAxis(90f, Vector3.up));
+        
+        link.endTransform = lastSpawnedGround.transform.Find("OffMeshLink").Find("rightStart").transform;
     }
 
     void SpawnLeft()
     {
+        OffMeshLink link = lastSpawnedGround.GetComponentInChildren<OffMeshLink>();
+
         Vector3 spawnPoint = lastSpawnedGround.transform.position;
         spawnPoint += lastSpawnedGround.transform.right * -22.5f;
         spawnPoint += lastSpawnedGround.transform.forward * 37.5f;
         lastSpawnedGround = Instantiate(groundPrefab, spawnPoint, lastSpawnedGround.transform.rotation * Quaternion.AngleAxis(-90f, Vector3.up));
+
+        link.endTransform = lastSpawnedGround.transform.Find("OffMeshLink").Find("leftStart").transform;
     }
 
     public void SpawnCoin()
@@ -84,7 +94,7 @@ public class GroundManager : MonoBehaviour
 
     public void SpawnFense()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
             float z = Random.Range(-30f, 30f);
             float x = Random.Range(-7.5f, 7.5f);
@@ -92,7 +102,7 @@ public class GroundManager : MonoBehaviour
             Instantiate(CanEndFense, lastSpawnedGround.transform.position + tmp, lastSpawnedGround.transform.rotation, lastSpawnedGround.transform);
         }
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 8; i++)
         {
             float z = Random.Range(-30f, 30f);
             float x = Random.Range(-7.5f, 7.5f);
