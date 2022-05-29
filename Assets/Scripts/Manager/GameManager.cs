@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         else
         {
             singleTon = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
 
             audioSource = GetComponents<AudioSource>();
         }
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         audioSource[1].PlayOneShot(gameEndClip);
         audioSource[0].Pause();
         
-        SceneManager.LoadScene("EndScene");
+        SceneManager.LoadScene(2);
     }
 
     public void PlayAudio()

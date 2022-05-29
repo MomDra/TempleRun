@@ -14,7 +14,7 @@ public class UIManagerEndScene : MonoBehaviour
     }
     public void ReplayGame()
     {
-        SceneManager.LoadScene("FinalExam");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitApplicaiton()

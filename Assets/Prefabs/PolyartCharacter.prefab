@@ -2121,6 +2121,7 @@ GameObject:
   - component: {fileID: 107493486}
   - component: {fileID: 107493483}
   - component: {fileID: 107493488}
+  - component: {fileID: 2576710536608190814}
   m_Layer: 0
   m_Name: PolyartCharacter
   m_TagString: Player
@@ -2213,7 +2214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   sideSpeed: 20
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!82 &107493488
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2310,6 +2310,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2576710536608190814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155525490693796601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a50834f9c62d84d938221edc3e5382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9155525490693796603
 GameObject:
   m_ObjectHideFlags: 0

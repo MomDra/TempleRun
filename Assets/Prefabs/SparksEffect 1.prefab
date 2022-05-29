@@ -13775,7 +13775,7 @@ GameObject:
   - component: {fileID: 198000012368742472}
   - component: {fileID: 199000010504584546}
   m_Layer: 0
-  m_Name: SparksEffect
+  m_Name: SparksEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

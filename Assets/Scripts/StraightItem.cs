@@ -17,6 +17,8 @@ public class StraightItem : MonoBehaviour
 
             GameManager.Instance.SoundManager.PlayStraightItemSound();
 
+            GameManager.Instance.EffectManager.PlayCoinEffect(transform.position);
+
             Destroy(gameObject);
         }
     }

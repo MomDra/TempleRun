@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour
             rb.AddForce(force * power, ForceMode.Impulse);
 
             GameManager.Instance.SoundManager.PlayPendulumSound();
+            GameManager.Instance.EffectManager.PlaySparkEffect(collision.GetContact(0).point);
 
             Debug.Log("Ãæµ¹!");
         }

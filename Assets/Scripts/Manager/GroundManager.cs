@@ -12,6 +12,8 @@ public class GroundManager : MonoBehaviour
     [SerializeField]
     GameObject coinPrefab;
     [SerializeField]
+    GameObject coin3Prefab;
+    [SerializeField]
     GameObject CanEndFense;
     [SerializeField]
     GameObject CanNotEndFense;
@@ -83,11 +85,16 @@ public class GroundManager : MonoBehaviour
 
     public void SpawnCoin()
     {
-        for(int i = 0; i < 5; i++)
+        float z = Random.Range(-30f, 30f);
+        float x = Random.Range(-7.5f, 7.5f);
+        Vector3 tmp = lastSpawnedGround.transform.forward.normalized * z + lastSpawnedGround.transform.right.normalized * x + Vector3.up;
+        Instantiate(coin3Prefab, lastSpawnedGround.transform.position + tmp, Quaternion.identity, lastSpawnedGround.transform);
+
+        for (int i = 0; i < 5; i++)
         {
-            float z = Random.Range(-30f, 30f);
-            float x = Random.Range(-7.5f, 7.5f);
-            Vector3 tmp = lastSpawnedGround.transform.forward.normalized * z + lastSpawnedGround.transform.right.normalized * x + Vector3.up;
+            z = Random.Range(-30f, 30f);
+            x = Random.Range(-7.5f, 7.5f);
+            tmp = lastSpawnedGround.transform.forward.normalized * z + lastSpawnedGround.transform.right.normalized * x + Vector3.up;
             Instantiate(coinPrefab, lastSpawnedGround.transform.position + tmp , Quaternion.identity, lastSpawnedGround.transform);
         }
     }

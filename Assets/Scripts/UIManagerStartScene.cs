@@ -8,6 +8,6 @@ public class UIManagerStartScene : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("FinalExam");
+        SceneManager.LoadScene(1);
     }
 }

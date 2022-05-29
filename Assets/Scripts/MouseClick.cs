@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseClick : MonoBehaviour
-{ 
+{
+    [SerializeField]
+    PlayerAnimation playerAnimation;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -22,6 +25,8 @@ public class MouseClick : MonoBehaviour
 
                         GameManager.Instance.Score--;
                         GameManager.Instance.UIManager.UpdateUI(GameManager.Instance.Score);
+
+                        playerAnimation.PlayShotAnimation();
                     }
                 }
             }

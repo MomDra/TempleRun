@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    [SerializeField] int score;
+
     private void Awake()
     {
         Destroy(gameObject, 35f);
@@ -18,7 +20,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.Score++;
+            GameManager.Instance.Score += score;
             GameManager.Instance.UIManager.UpdateUI(GameManager.Instance.Score);
 
             GameManager.Instance.SoundManager.PlayCoinSound();
